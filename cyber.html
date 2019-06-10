@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cyber</title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
+	<link rel="stylesheet" href="normalize.css">
+
+	<style type="text/css">	
+		html, body {margin: 0;}
+
+		.gradi{width: 100%; height: 100%; text-align: center; overflow: hidden;}
+		.gradi img{width: 100%; height: 100%; }
+
+		.mbar{animation-name: plzdwn; animation-duration: 3s; animation-timing-function: linear; animation-iteration-count: infinite;}
+
+		.context{position: absolute; top: 110px; left: 60px;}
+		.context img{ width: 110%;}
+
+		.red{position: absolute; width: 300px; height: 200px; top: 235px; left: 60px; border: 1px black solid;}
+		.red img{position: absolute; float: left;}
+		.yellow{position: absolute; width: 300px; height: 200px; top: 520px; left: 60px; border: 1px black solid; float: left;}
+		.green{position: absolute; width: 300px; height: 200px; top: 800px; left: 60px; border: 1px black solid; float: left;}
+
+		@keyframes plzdwn {
+	      0%   {top: -70px;}
+	      30%   {top: -10px;}
+	      80%   {top: -10px;}
+	      100%   {top: -70px;}
+	    }
+
+
+	</style>
+	
+</head>
+<body style="overflow: hidden;">
+	
+	<div class="gradi">
+		<img src="gradi.png">
+		<img src="gradi.png" style="top: -6px; position: relative;">
+		<div class="mbar" style="position: absolute; top: -20px; width: 105%; left: -50px;">
+			<img src="bar2.png">
+		</div>
+		<div class="mbar2" style="position: absolute; top: -20px; width: 103%; left: -30px;">
+			<img src="bar3.png">
+		</div>
+	</div>
+
+	<div class="context">
+		<img src="cybermain.png">
+	</div>
+
+	<div class="red">
+		<img src="1.png" class="drag" style="top: -47px; left: -12px;" >
+		<img src="2.png" style="top: -65px; left: 130px;" class="drag">
+		<img src="3.png" style="top: 10px; left: -12px;" class="drag">
+		<img src="4.png" style="top: 5px; left: 127px;" class="drag">
+		<img src="5.png" style="top: 80px; left: -10px;" class="drag">
+		<img src="6.png" style="top: 93px; left: 129px;" class="drag">
+	</div>
+	<div class="yellow">
+		
+	</div>
+	<div class="green">
+		
+	</div>
+</body>
+
+<script type="text/javascript">
+		(function(){
+			var d = false;
+			var target,dx,dy;
+			var t = document.getElementsByClassName("drag");
+			for(var i=0; i<t.length; i++){
+				t[i].style.display = "block";
+				t[i].style.position = "absolute";
+				t[i].style.cursor = "pointer";
+				t[i].ondragstart = function(e){e.preventDefault();};
+				t[i].onmousedown = function(e){ d = true; dx = e.offsetX; dy = e.offsetY; target = e.target;}
+				t[i].onmouseup = function(){ d = false;}
+				window.onmousemove = function(e){ 
+					if(d){ target.style.left = (e.clientX - dx) + "px";
+						target.style.top = (e.clientY - dy) + "px";}
+				}
+			}
+		})();
+	</script>
+</html>

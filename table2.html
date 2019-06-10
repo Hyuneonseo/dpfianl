@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="table2.css">
+
+    <title>table2</title>
+  </head>
+
+
+  <body>
+
+
+
+<br><br><br><br><br><br><br>
+
+<div class="filters" style="text-align: left; border: 1px dashed black; width: 70%; margin: auto; padding: 10px;">
+
+  <div class="ui-group">
+    <h3>(1) 이름의 접두사를 고르시오</h3>
+    <div class="button-group js-radio-button-group" data-filter-group="color">
+      <button class="button is-checked" data-filter="">전체</button>
+      <button class="button" data-filter=".green">형용사</button>
+      <button class="button" data-filter=".red">관형사</button>
+      <button class="button" data-filter=".skyblue">수사</button>
+      <button class="button" data-filter=".blue">부사</button>
+      <button class="button" data-filter=".yellow">명사</button>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="ui-group">
+    <h3>(2) 이름의 어근을 고르시오</h3>
+    <div class="button-group js-radio-button-group" data-filter-group="size" style="position: relative; left: 10px;">
+      <button class="button is-checked" data-filter="">전체</button>
+      <button class="button" data-filter=".small" style="text-decoration: line-through;">부사</button>
+      <button class="button" data-filter=".smaller">명사</button>
+      <button class="button" data-filter=".wide">형용사</button>
+      <button class="button" data-filter=".big">동사</button>
+      <button class="button" data-filter=".tall">부사</button>
+      <button class="button" data-filter=".wider">수사</button>
+      <button class="button" data-filter=".short">조사</button>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="ui-group">
+    <h3>(3) 이름의 접미사를 고르시오</h3>
+    <div class="button-group js-radio-button-group" data-filter-group="shape" style="position: relative; left: -4px;">
+      <button class="button is-checked" data-filter="">전체</button>
+      <button class="button" data-filter=".round1">수사</button>
+      <button class="button" data-filter=".round2">부사</button>
+      <button class="button" data-filter=".round3">동사</button>
+      <button class="button" data-filter=".round4">명사</button>
+      <button class="button" data-filter=".round5">형용사</button>
+      <button class="button" data-filter=".round6">조사</button>
+      <button class="button" data-filter=".round7">감탄사</button>
+      <button class="button" data-filter=".round8">서술격조사</button>
+      <button class="button" data-filter=".round9">관형사</button>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="ui-group">
+    <h3>(4) 긴 합성어를 원한다면</h3>
+    <div class="button-group js-radio-button-group" data-filter-group="dd" style="position: relative; left: 23px;">
+      <button class="button is-checked" data-filter="">전체</button>
+      <button class="button" data-filter=".thick">명사</button>
+      <button class="button" data-filter=".thin">조사</button> 
+    </div>
+  </div>
+
+</div>
+
+ <h3 style="text-align: center;">
+ 
+</h3> 
+<br>
+<div class="grid" style="margin: auto;">
+ 
+  <div class="color-shape green small" onclick="mytoFunction()">
+    알찬바로
+    <div id="another1">
+      <span style="font-size: 2.5em; ">
+        *알차게 바로 살라는 뜻.<br>
+      </span>
+      <span style="font-size: 1.5em; background-color: black; color: white;"> 
+        알찬바로=(형용사+부사)
+      </span>
+    </div>
+  </div>
+
+  <div class="color-shape green smaller" onclick="mytoFunction2()">
+    고든길
+    <div id="another2">
+      <span style="font-size: 2em; line-height: 1.2em;">
+        *곧은길로만 가라고 ‘곧은길’을 소리나는 대로 옮긴 이름.<br>
+      </span>
+      <span style="font-size: 1em; background-color: black; color: white;"> 
+        고든길=(형용사+명사)
+      </span>
+    </div>
+  </div>
+
+  <div class="color-shape green smaller" onclick="mytoFunction3()">
+    고운별
+    <div id="another3">
+      <span style="font-size: 2em; line-height: 1.2em;">
+        *곱게 그리고 별처럼 빛나는 삶을 살라는 뜻으로 지은 이름.<br>
+      </span>
+      <span style="font-size: 1em; background-color: black; color: white;"> 
+        고운별=(형용사+명사)
+      </span>
+    </div>
+  </div>
+
+  <div class="color-shape green smaller" onclick="mytoFunction4()">
+    고운비
+    <div id="another4">
+      <span style="font-size: 2em; line-height: 1.2em;">
+        *곱게 내리는 비.<br>
+      </span>
+      <span style="font-size: 1em; background-color: black; color: white;"> 
+        고운비=(형용사+명사)
+      </span>
+    </div>
+  </div>
+
+  <div class="color-shape green smaller" onclick="mytoFunction5()">
+    너른길
+    <div id="another5">
+      <span style="font-size: 2em; line-height: 1.2em;">
+        *넓고 바른 길을 따라 사는 사람이 되라는 뜻.<br>
+      </span>
+      <span style="font-size: 1em; background-color: black; color: white;"> 
+        너른길=(형용사+명사)
+      </span>
+    </div>
+  </div>
+
+  <div class="color-shape green smaller" onclick="mytoFunction6()">
+    밝은빛
+    <div id="another6">
+      <span style="font-size: 2em; line-height: 1.2em;">
+        *온 누리를 밝게 비추는 빛이 되라는 뜻.<br>
+      </span>
+      <span style="font-size: 1em; background-color: black; color: white;"> 
+        밝은빛=(형용사+명사)
+      </span>
+    </div>
+  </div>
+
+  <div class="color-shape green smaller" onclick="mytoFunction7()">
+    알찬길
+    <div id="another7">
+      <span style="font-size: 2em; line-height: 1.2em;">
+        *알차고 실속 있는 인생길을 가라는 뜻.<br>
+      </span>
+      <span style="font-size: 1em; background-color: black; color: white;"> 
+        알찬길=(형용사+명사)
+      </span>
+    </div>
+  </div>
+
+  <div class="color-shape green smaller" onclick="mytoFunction8()">
+    어진꽃
+    <div id="another8">
+      <span style="font-size: 2em; line-height: 1.2em;">
+        *마음이 어질고 꽃과 같이 곱다는 뜻.<br>
+      </span>
+      <span style="font-size: 1em; background-color: black; color: white;"> 
+        어진꽃=(형용사+명사)
+      </span>
+    </div>
+  </div>
+
+  <div class="color-shape red wide" onclick="mytoFunction9()">
+    온찬
+    <div id="another9">
+      <span style="font-size: 2em; line-height: 1.2em;">
+        *온갖 것이 모두 찬, 즉 사람으로서 갖추어야 할 여러 가지 것들이 모둔 찬 사람이라는 뜻.<br>
+      </span>
+      <span style="font-size: 1em; background-color: black; color: white;"> 
+        온찬=(관형사+형용사)
+      </span>
+    </div>
+  </div>
+
+  <div class="color-shape red wide" onclick="mytoFunction10()">
+    온큰
+    <div id="another10">
+      <span style="font-size: 2em; line-height: 1.2em;">
+        *모자람 없이 온전하고 큰 인물이 되라는 뜻에서 ‘온전하고 큰’을 줄여 지은 이름.<br>
+      </span>
+      <span style="font-size: 1em; background-color: black; color: white;"> 
+        온큰=(관형사+형용사)
+      </span>
+    </div>
+  </div>
+
+  <div class="color-shape red big" onclick="mytoFunction11()">
+    새듬
+    <div id="another11">
+      <span style="font-size: 2em; line-height: 1.2em;">
+        *우리 가족의 한 사람으로 새로 든 사람이라는 뜻. ‘듬’은 ‘들다’의 명사형.<br>
+      </span>
+      <span style="font-size: 1em; background-color: black; color: white;"> 
+        새듬=(관형사+동사)
+      </span>
+    </div>
+  </div>
+
+  <div class="color-shape red smaller" onclick="mytoFunction12()">
+    새거울
+    <div id="another12">
+      <span style="font-size: 2em; line-height: 1.2em;">
+        *새 거울에 자신의 모습을 비추듯 늘 스스로를 성찰하며 살라는 뜻.<br>
+      </span>
+      <span style="font-size: 1em; background-color: black; color: white;"> 
+        새거울=(관형사+명사)
+      </span>
+    </div>
+  </div>
+
+  <div class="color-shape red smaller">온나라</div>
+  <div class="color-shape red smaller">온솔</div>
+
+  <div class="color-shape skyblue wide">두빛나</div>
+  <div class="color-shape skyblue smaller">두범</div>
+  <div class="color-shape skyblue smaller">새버들</div>
+  <div class="color-shape skyblue smaller">두솔</div>
+  <div class="color-shape skyblue smaller">한섬</div>
+  <div class="color-shape skyblue smaller">한사랑</div>
+  <div class="color-shape skyblue smaller">한알</div>
+  <div class="color-shape blue wide">가득찬</div>
+  <div class="color-shape blue wide">늘바른</div>
+  <div class="color-shape blue wide">다가득한</div>
+  <div class="color-shape blue wide">다곰</div>
+
+  <div class="color-shape blue big">가득차오름</div>
+  <div class="color-shape blue big">늘나라</div>
+  <div class="color-shape blue big">다열림</div>
+  <div class="color-shape blue big">다채운</div>
+  <div class="color-shape blue big">바로설</div>
+  <div class="color-shape blue big">새난</div>
+  <div class="color-shape blue tall">모로미</div>
+  <div class="color-shape blue tall">보담</div>
+  <div class="color-shape blue smaller">노피별</div>
+  <div class="color-shape blue smaller">늘글</div>
+  <div class="color-shape blue smaller">다힘</div>
+  <div class="color-shape blue smaller">돋해</div>
+  <div class="color-shape blue smaller">두루해</div>
+  <div class="color-shape blue smaller">바센나</div>
+
+  <div class="color-shape yellow wide">돌찬</div>
+  <div class="color-shape yellow wide">별아련</div>
+  <div class="color-shape yellow wide">빛참</div>
+  <div class="color-shape yellow wide">샘큰</div>
+  <div class="color-shape yellow wide">해고운</div>
+  <div class="color-shape yellow wide">해긴</div>
+  <div class="color-shape yellow wide">해조아해</div>
+  <div class="color-shape yellow wide">해찬</div>
+
+  <div class="color-shape yellow wider">꽃하나</div>
+  <div class="color-shape yellow wider">나하나</div>
+
+  <div class="color-shape yellow tall">나절로</div>
+  <div class="color-shape yellow tall">바위늘</div>
+  <div class="color-shape yellow tall">벌늘</div>
+  <div class="color-shape yellow tall">봄다</div>
+  <div class="color-shape yellow tall">빛늘</div>
+  <div class="color-shape yellow tall">하양다</div>
+  <div class="color-shape yellow tall">샘늘</div>
+  <div class="color-shape yellow tall">해늘</div>
+
+  <div class="color-shape yellow big">글든</div>
+  <div class="color-shape yellow big">글모아</div>
+  <div class="color-shape yellow big">글오름</div>
+  <div class="color-shape yellow big">소리나</div>
+  <div class="color-shape yellow big">으뜸나리</div>
+  <div class="color-shape yellow big">이름나</div>
+  <div class="color-shape yellow big">이슬나</div>
+  <div class="color-shape yellow big">잔디나</div>
+  <div class="color-shape yellow big">해난</div>
+  <div class="color-shape yellow big">해든</div>
+  <div class="color-shape yellow big">해안음</div>
+  <div class="color-shape yellow big">힘나라</div>
+
+  <div class="color-shape yellow smaller">구름재</div>
+  <div class="color-shape yellow smaller">구슬샘</div>
+  <div class="color-shape yellow smaller">벌글</div>
+  <div class="color-shape yellow smaller">보라샘</div>
+  <div class="color-shape yellow smaller">보름나라</div>
+  <div class="color-shape yellow smaller">봄눈</div>
+
+  <div class="color-shape green smaller round1 drag"><a href=""></a> 하얀꽃하나</div>
+
+  <div class="color-shape green smaller round2" value="Change the Text" onClick="change(); return false;" style="border: 1px solid black;">큰꽃늘</div>
+  <div class="color-shape green smaller round3">고운해오름</div>
+  <div class="color-shape green smaller round3">큰봄나</div>
+  <div class="color-shape green smaller round4">고운솔나라</div>
+  <div class="color-shape green smaller round4">든해솔</div>
+  <div class="color-shape green smaller round4">큰눈들</div>
+  <div class="color-shape green smaller round4">큰봄내</div>
+
+  <div class="color-shape red smaller round5">새큰길</div>
+  <div class="color-shape red smaller round5">새힘찬</div>
+
+  <div class="color-shape red smaller round4">새들꽃</div>
+  <div class="color-shape red smaller round6">새마으미</div>
+
+  <div class="color-shape skyblue wide round3">두빛나보라</div>
+  <div class="color-shape skyblue wide round3">두빛나새얌</div>
+
+  <div class="color-shape skyblue wide round4">두빛나언덕</div>
+
+  <div class="color-shape skyblue smaller round4">두범나라</div>
+
+  <div class="color-shape skyblue smaller round4">두빛나래</div>
+  <div class="color-shape skyblue smaller round7">한소라</div>
+
+  <div class="color-shape blue wide round4">가득찬길</div>
+  <div class="color-shape blue wide round4">다하얀별</div>
+  <div class="color-shape blue wide round4">바로찬글</div>
+
+  <div class="color-shape blue big round4">새로찬나라</div>
+  <div class="color-shape blue big round3">다늘차</div>
+  <div class="color-shape blue smaller round3">늘볕든</div>
+
+  <div class="color-shape yellow wide round3">별찬하련</div>
+
+  <div class="color-shape yellow wide round4">별찬길</div>
+  <div class="color-shape yellow wide round4">보람빛글</div>
+  <div class="color-shape yellow wide round4">해찬글</div>
+  <div class="color-shape yellow wide round4">해찬들</div>
+  <div class="color-shape yellow wide round4">해찬별</div>
+  <div class="color-shape yellow wide round4">해찬솔</div>
+
+  <div class="color-shape yellow tall round5">하늘더푸른</div>
+  <div class="color-shape yellow tall round4">글가득샘</div>
+  <div class="color-shape yellow tall round4">글늘빛</div>
+  <div class="color-shape yellow tall round4">보람나글</div>
+  <div class="color-shape yellow tall round4">슬기다해</div>
+  <div class="color-shape yellow tall round4">해늘봄</div>
+
+  <div class="color-shape yellow big round5">해든알찬</div>
+  <div class="color-shape yellow big round3">솔찬하련</div>
+  <div class="color-shape yellow big round4">내난벌</div>
+  <div class="color-shape yellow big round4">새난길</div>
+  <div class="color-shape yellow big round4">솔찬길</div>
+  <div class="color-shape yellow big round4">해난들</div>
+  <div class="color-shape yellow big round4">해난빛</div>
+  <div class="color-shape yellow big round4">해든나라</div>
+  <div class="color-shape yellow big round4">해든마루</div>
+  <div class="color-shape yellow big round4">해든별</div>
+  <div class="color-shape yellow big round4">해든보람</div>
+
+  <div class="color-shape yellow smaller round2">풀빛다</div>
+  <div class="color-shape yellow smaller round3">가을해오름</div>
+  <div class="color-shape yellow smaller round3">글아름난</div>
+  <div class="color-shape yellow smaller round3">나루해오름</div>
+
+  <div class="color-shape yellow smaller round5">글나라찬</div>
+  <div class="color-shape yellow smaller round5">글빛찬</div>
+  <div class="color-shape yellow smaller round5">해샘찬</div>
+  <div class="color-shape yellow smaller round5">해솔찬</div>
+  <div class="color-shape yellow smaller round5">해재찬</div>
+
+  <div class="color-shape yellow smaller round8">하늘바위라</div>
+  <div class="color-shape yellow smaller round4">갈잎소리</div>
+  <div class="color-shape yellow smaller round4">글새빛</div>
+  <div class="color-shape yellow smaller round4">글슬기샘</div>
+  <div class="color-shape yellow smaller round4">해솔나라</div>
+
+  <div class="color-shape yellow short round5">글로빛나</div>
+  <div class="color-shape yellow short round5">해가맑은</div>
+
+  <div class="color-shape yellow short round2">해가든</div>
+  <div class="color-shape yellow short round3">글로나라</div>
+  <div class="color-shape yellow short round3">보메나</div>
+
+  <div class="color-shape yellow short round4">글로바다</div>
+  <div class="color-shape yellow short round4">글로빛</div>
+  <div class="color-shape yellow short round4">뜰에봄</div>
+  <div class="color-shape yellow short round4">보미나래</div>
+
+  <div class="color-shape skyblue smaller round5 thick">두바다찬빛</div>
+  <div class="color-shape blue big round4 thin">가까스로어든노미</div>
+  <div class="color-shape yellow wide round4 thick">별찬해솔</div>
+  <div class="color-shape yellow short round9 thick">뜰에새봄결</div>
+
+  
+</div>
+<br>
+<br>
+<div class="menu" style="width: 100%; margin: 0px; overflow: hidden; height: 115px; position: absolute; top: 0px;">
+      <img src="bar2.png" style="position: relative; left: -45px; width: 105%; top: 0px; animation-name: plzdwn; animation-duration: 3s; animation-timing-function: linear; animation-iteration-count: infinite;">
+      <div id="nhct">
+        <br>
+        <br>
+        <br>
+        노하우 및 조어방식 소개 랑
+        <br>
+        접두사 종류
+        <br>(1) 형용사 : 16개
+        <br>(2) 관형사 : 10개
+        <br>(3) 수사 : 14개
+        <br>(4) 부사 : 25개
+        <br>(5) 명사 : 85개
+        <br>
+        <br>어근의 종류
+        <br>(1) 부사 : 1개
+        <br>(2) 명사 : 59개
+        <br>(3) 형용사 : 29개
+        <br>(4) 동사 : 33개
+        <br>(5) 부사 : 16개
+        <br>(6) 수사 : 2개
+        <br>(7) 조사 : 10개
+        <br>
+        <br>접미사의 종류
+        <br>(1) 수사 : 1개
+        <br>(2) 부사 : 3개
+        <br>(3) 동사 : 13개
+        <br>(4) 명사 : 42개
+        <br>(5) 형용사 : 12개
+        <br>(6) 조사 : 1개
+        <br>(7) 감탄사 : 1개
+        <br>(8) 서술격조사 : 1개
+        <br>(9) 관형사 : 1개
+        <br>
+        <br>긴 합성어 종류
+        <br>(1) 명사 : 3개
+        <br>(2) 조사 : 1개
+        <br>조어가 안되는 몇 경우 안내
+      </div>
+      <img src="bar3.png" style="position: relative; left: -40px; width: 105%; top: -140px;">
+    </div>
+<div class="nohow" onclick="shownhct()">
+  ?
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="isotope.pkgd.min.js"></script>
+    </script>
+    <script type="text/javascript">
+      // external js: isotope.pkgd.js
+
+      // init Isotope
+      var $grid = $('.grid').isotope({
+        itemSelector: '.color-shape'
+      });
+
+      // store filter for each group
+      var filters = {};
+
+      $('.filters').on( 'click', '.button', function( event ) {
+        var $button = $( event.currentTarget );
+        // get group key
+        var $buttonGroup = $button.parents('.button-group');
+        var filterGroup = $buttonGroup.attr('data-filter-group');
+        // set filter for group
+        filters[ filterGroup ] = $button.attr('data-filter');
+        // combine filters
+        var filterValue = concatValues( filters );
+        // set filter for Isotope
+        $grid.isotope({ filter: filterValue });
+      });
+
+      // change is-checked class on buttons
+      $('.button-group').each( function( i, buttonGroup ) {
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.on( 'click', 'button', function( event ) {
+          $buttonGroup.find('.is-checked').removeClass('is-checked');
+          var $button = $( event.currentTarget );
+          $button.addClass('is-checked');
+        });
+      });
+        
+      // flatten object by concatting values
+      function concatValues( obj ) {
+        var value = '';
+        for ( var prop in obj ) {
+          value += obj[ prop ];
+        }
+        return value;
+      }
+
+      (function(){
+          var d = false;
+          var target,dx,dy;
+          var t = document.getElementsByClassName("drag");
+          for(var i=0; i<t.length; i++){
+            t[i].style.display = "block";
+            t[i].style.position = "absolute";
+            t[i].style.cursor = "pointer";
+            t[i].ondragstart = function(e){e.preventDefault();};
+            t[i].onmousedown = function(e){ d = true; dx = e.offsetX; dy = e.offsetY; target = e.target;}
+            t[i].onmouseup = function(){ d = false;}
+            window.onmousemove = function(e){ 
+              if(d){ target.style.left = (e.clientX - dx) + "px";
+                target.style.top = (e.clientY - dy) + "px";}
+            }
+          }
+        })();
+
+    </script>
+
+    <script type="text/javascript">
+      function mytoFunction(){
+         var x = document.getElementById("another1");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+
+      function mytoFunction2(){
+         var x = document.getElementById("another2");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+
+      function mytoFunction3(){
+         var x = document.getElementById("another3");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+
+      function mytoFunction4(){
+         var x = document.getElementById("another4");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+
+      function mytoFunction5(){
+         var x = document.getElementById("another5");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+
+      function mytoFunction6(){
+         var x = document.getElementById("another6");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+
+      function mytoFunction7(){
+         var x = document.getElementById("another7");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+
+      function mytoFunction8(){
+         var x = document.getElementById("another8");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+
+      function mytoFunction9(){
+         var x = document.getElementById("another9");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+
+      function mytoFunction10(){
+         var x = document.getElementById("another10");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+
+      function mytoFunction11(){
+         var x = document.getElementById("another11");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+
+      function mytoFunction12(){
+         var x = document.getElementById("another12");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+
+      function mytoFunction13(){
+         var x = document.getElementById("another13");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+
+      function shownhct(){
+        var x = document.getElementById("nhct");
+         if(x.style.display==="block"){
+            x.style.display="none";
+         }else{
+            x.style.display="block";
+         }
+      }
+   </script>
+  </body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hangeul_open</title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
+	<style type="text/css">
+
+		html, body {height: 100%; margin: 0;}
+
+		a:link, a:active, a:visited{text-decoration: none; }
+	    a:link, a:active, a:visited{color: #00cdff;}
+
+		.gradi{width: 100%; height: 100%; text-align: center; overflow: hidden;}
+		.gradi img{width: 100%; height: 100%; }
+
+		.title{position: fixed; font-family: 'Noto Sans KR', sans-serif; font-weight: 700; font-size: 3.5em; text-align: left; left: 720px; top: 400px; line-height: 1.2em; transform: rotate(-28deg); cursor: pointer;}
+		.title:hover{color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+
+		.introduce{position: fixed; width: 600px; height: 800px; background-color: white; border:1px solid black; top: 100px; left: 530px; opacity: 0.9; overflow: auto; animation-name: texample; animation-duration: 4s; animation-timing-function: steps(20);}
+		.it_text{font-family: 'Noto Sans KR', sans-serif; font-weight: 400; font-size: 1em; text-align: left; width: 520px; height: 720px; border: 1px solid black; margin: auto; margin-top: 10px; padding: 30px; line-height: 1.8em; overflow: auto;}
+
+		.dec{}
+		.deco1{position: absolute; top: -400px; right: -400px; animation-name: example; animation-duration: 4s; animation-iteration-count: infinite; animation-timing-function: steps(10); animation-delay: 3.5s;}
+		.deco1 img{width: 300px;}
+		.deco2{position: absolute; top: -400px; left: -400px; animation-name: examples; animation-duration: 4s; animation-iteration-count: infinite; animation-timing-function: steps(10); animation-delay: 3.5s;}
+		.deco2 img{width: 300px; transform: scaleX(-1);}
+		.deco3{position: absolute; bottom: -400px; right: -400px; animation-name: exampless; animation-duration: 4s; animation-iteration-count: infinite; animation-timing-function: steps(10); animation-delay: 3.5s;}
+		.deco3 img{width: 300px; transform: scaleY(-1);}
+		.deco4{position: absolute; bottom: -400px; left: -400px;animation-name: examplesss; animation-duration: 4s; animation-iteration-count: infinite; animation-timing-function: steps(10); animation-delay: 3.5s;}
+		.deco4 img{width: 300px; transform: rotate(-180deg);}
+
+		@keyframes example {
+		  0%   {top:-400px; right:-400px;}
+		  30% {top:-50px; right:-50px;}
+		  70% {top:-50px; right:-50px;}
+		  100%   {top:-400px; right:-400px;}
+		}
+		@keyframes examples {
+		  0%   {top:-400px; left:-400px;}
+		  30% {top:-50px; left:-50px;}
+		  70% {top:-50px; left:-50px;}
+		  100%   {top:-400px; left:-400px;}
+		}
+		@keyframes exampless {
+		  0%   {bottom:-400px; right:-400px;}
+		  30% {bottom:-50px; right:-50px;}
+		  70% {bottom:-50px; right:-50px;}
+		  100%   {bottom:-400px; right:-400px;}
+		}
+		@keyframes examplesss {
+		  0%   {bottom:-400px; left:-400px;}
+		  30% {bottom:-50px; left:-50px;}
+		  70% {bottom:-50px; left:-50px;}
+		  100%   {bottom:-400px; left:-400px;}
+		}
+		@keyframes glow {
+		  0%   {opacity: 1;}
+		  50% {opacity: 0;}
+		  100% {opacity: 1;}
+		}
+
+		@keyframes texample {
+		  0%   {top: -1000px;}
+		  100%   {top: 100px;}
+		}
+
+		@keyframes up {
+		  0%   {bottom: 0px;}
+		  100%   {bottom: 125px;}
+		}
+
+		@keyframes blink {
+        from {transform: scale(1,1);}
+        to {transform: scale(1.2,1.2);}
+      	}
+
+      	@keyframes window {
+        0%{opacity: 1.0}
+        50%{opacity: 0.2}
+        100%{opacity: 1.0}
+      	}
+
+		.home{position: relative; bottom: 125px; cursor: pointer; animation-name: up; animation-duration: 4s; animation-timing-function: steps(10);}
+		.home img{width: 500px;}
+
+		.navi{width: 450px; height: 500px; position: fixed; bottom: 50px; right: 0px;}
+
+		#navi1{width: 360px; height: 80px; position: relative; top: 0px; left: 40px; border-radius: 50%; background-color: white; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; font-size: 2.4em; color: #00cdff; line-height: 2em; visibility: hidden; cursor: pointer;}
+		#navi2{width: 400px; height: 80px; position: relative; top: 20px; border-radius: 50%; background-color: white; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; font-size: 2.4em; color: #00cdff; line-height: 2em; visibility: hidden; cursor: pointer;}
+		#navi3{width: 430px; height: 80px; position: relative; top: 40px; border-radius: 50%; background-color: white; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; font-size: 2.4em; color: #00cdff; line-height: 2em; visibility: hidden; cursor: pointer;}
+		#navi4{width: 400px; height: 120px; position: relative; top: 60px; border-radius: 50%; background-color: white; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; font-size: 2.4em; color: #00cdff; line-height: 1.3em; overflow: hidden; visibility: hidden; cursor: pointer;}
+
+		#navi1:hover{box-shadow: 10px 10px 15px gray;}
+		#navi2:hover{box-shadow: 10px 10px 15px gray;}
+		#navi3:hover{box-shadow: 10px 10px 15px gray;}
+		#navi4:hover{box-shadow: 10px 10px 15px gray;}
+
+		#pre1{visibility: hidden; position: relative; width: 400px; top: 200px; left: 110px; animation-name: blink; animation-duration: 2s; animation-iteration-count: infinite; animation-timing-function: steps(10);}
+		#pre2{visibility: hidden; position: relative; width: 400px; top: 120px; left: 20px; animation-name: blink; animation-duration: 2s; animation-iteration-count: infinite; animation-timing-function: steps(10);}
+		#pre3{visibility: hidden; position: relative; width: 280px; top: 30px; left: 300px; z-index: -999; animation-name: blink; animation-duration: 2s; animation-iteration-count: infinite; animation-timing-function: steps(10);}
+	</style>
+	<script type="text/javascript">
+
+		function showAll(){
+			var element = document.getElementById('navi1');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+		}
+
+		function nshowAll(){
+			var element = document.getElementById('navi1');
+
+			if(element.style.visibility == 'visible') {
+				element.style.visibility = 'hidden';
+			}
+		}
+
+
+		function showAll2(){
+			var element = document.getElementById('navi2');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+		}
+
+		function nshowAll2(){
+			var element = document.getElementById('navi2');
+
+			if(element.style.visibility == 'visible') {
+				element.style.visibility = 'hidden';
+			}
+		}
+
+		function showAll3(){
+			var element = document.getElementById('navi3');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+		}
+
+		function nshowAll3(){
+			var element = document.getElementById('navi3');
+
+			if(element.style.visibility == 'visible') {
+				element.style.visibility = 'hidden';
+			}
+		}
+
+		function showAll4(){
+			var element = document.getElementById('navi4');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+		}
+
+		function nshowAll4(){
+			var element = document.getElementById('navi4');
+
+			if(element.style.visibility == 'visible') {
+				element.style.visibility = 'hidden';
+			}
+		}
+
+		function screen1(){
+			var element = document.getElementById('pre1');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+		}
+		function screen2(){
+			var element = document.getElementById('pre2');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+		}
+		function screen3(){
+			var element = document.getElementById('pre3');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+		}
+
+		
+	</script>
+</head>
+<body style="overflow: hidden;">
+	
+	<div class="gradi">
+		<img src="gradi.png">
+		
+		<div class="title">
+			백만사람<br>한글이름<br>갖기
+		</div>
+		
+
+		<div class="introduce">
+			<div class="it_text">
+				“전 세계에서 제나라 말과 글로 이름을 짓지 않는 나라는 우리나라가 유일하다.<br>역사적으로 보면 한국식 한자는 분명 우리 것이지만 지금 국어기본법에서 정한 우리글은 아니다.” <김슬옹의 세종한글이야기>
+				<br><br>
+				대부분 이름이라는 것이 온전히 나의 것이지만 완벽히 남으로부터 주어지는 형태다. 후천적으로 개명을 하지 않는 이상 이름짓기에는 나의 개입이 있을 수 없다. 더구나 이러한 이름에는 쉽게 극복할 수 없는 몇 고정관념이 있어왔다. 
+				<br><br>
+				첫째. 중국식 성의 익숙함 (이는 일제강점기때 ‘민적부’에서 비롯된 것으로 채 90년이 안 된 일이다.) 
+				둘째. 3음절형의 이름 (이 또한 ‘민적부’에 의한 것으로 조선시대에는 2음절형 부터 4음절형까지 다양했다.)
+				셋째. 명사형에 갇힌 쓰임새
+				넷째. 아빠 성씨와 항렬문화
+				<br><br>
+				단순히 한글이름이 더 우월하고 한자 이름은 열등하다는 메세지를 전달하려는 것이 아니라 앞서 말한 고정관념을 타파하고 주체적인 태도로 이름을 바라보자는 의견을 말하고 싶었다. 또한 한글 이름 짓기에서 주의할 점, 너무 ‘예쁘고 고운’ 한글 이름만을 고집하는 경향에서 벗어나 독창성과 문화성을 충족시키는 한글이름의 역량을 알리고 싶다.
+				<br><br>
+				따라서 이 프로젝트는 앞으로 평생 나를 이르는 단어가 될 이름을 나의 손으로, 나의 뜻을 담아 짓는 것이 들어맞지 않을까? 하는 생각에서 시작되었고 한글 이름짓기 문화에 혁명을 기대하며 이를 경험 해볼 수 있는 작은 체험의 장을 제공하고자 한다.
+			</div>
+			<button onclick="screen1()" style="position: absolute; bottom: 50px; left:100px;">스크린1</button>
+			<button onclick="screen2()" style="position: absolute; bottom: 50px; left:200px;">스크린2</button>
+			<button onclick="screen3()" style="position: absolute; bottom: 50px; left:300px;">스크린3</button>
+		</div>
+		<div class="home">
+			<a href="index.html"><img src="home.png"></a>
+		</div>
+		<div class="navi" onmouseover="showAll(),showAll2(),showAll3(),showAll4()" onmouseout="nshowAll(),nshowAll2(),nshowAll3(),nshowAll4()">
+			<div id="navi1" >
+				<a href="test.html">편하게 이름짓기</a> 
+			</div>
+			<div id="navi2">
+				<a href="table2.html">일반 말만들기(조어) 방식으로 이름짓기</a>	
+			</div>
+			<div id="navi3">
+				<a href="index3.html">창의적으로 이름짓기</a> 
+			</div>
+			<div id="navi4">
+				 <a href="loading.html">통신언어로 이름짓기</a> 
+			</div>
+		</div>
+
+		<div class="preview" style="position: fixed; top: 0px;">
+			<div id="pre1">
+				<img src="screen1.png">
+			</div>
+			<div id="pre2">
+				<img src="screen2.png">
+			</div>
+			<div id="pre3">
+				<img src="screen3.png">
+			</div>
+				
+		</div>
+
+		<div class="dec">
+			<div class="mbar" style="position: absolute; top: -20px; width: 110%; left: -60px;">
+				<img src="bar1.png">
+			</div>
+			<div class="deco1">
+				<img src="dec.png">
+			</div>
+			<div class="deco2">
+				<img src="dec.png">
+			</div>
+			<div class="deco3">
+				<img src="dec.png">
+				<img src="click3.png" style="position: absolute; bottom:200px; right:100px; width: 180px; height: 195px; transform: scaleY(-1);" onmouseover="showAll(),showAll2(),showAll3(),showAll4()" onmouseout="nshowAll(),nshowAll2(),nshowAll3(),nshowAll4()">
+			</div>
+			<div class="deco4">
+				<img src="dec.png">
+			</div>
+		</div>
+
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hangeul_open</title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.6/lib/sortable.js"></script>
+	<style type="text/css">
+
+		html, body {height: 100%; margin: 0; overflow: }
+
+		a:link, a:active, a:visited{text-decoration: none; }
+	    a:link, a:active, a:visited{color: black;}
+
+		.gradi{width: 100%; height: 100%; text-align: center; overflow: ;}
+		.gradi img{width: 100%; height: 100%; }
+
+		#xxx{position: absolute; top: 0px; }
+
+		#xxx>span {
+	        display: inline-block;
+	        margin: 30px;
+	        padding: 30px 60px;
+	        color: white;
+	        font-size: 40px;
+	        border-radius: 20px;
+	        text-shadow: 0 0 20px rgba(0,0,0,0.3);
+	        transform: scale(0.7);
+		   	transform-origin: 50% 50%;
+	    }
+	    .draggable-source--is-dragging {
+	        visibility: hidden;
+	    }
+
+	    #container {width:75%;margin:2em auto; position: absolute; top: 350px; right: -700px;}
+	    p {margin-bottom:24px}
+	    p span {line-height:1;display:inline-block;margin:0 4px 8px 0; background-color:#efefef;padding:.4em;-webkit-box-shadow:3px 3px 0px 0px rgba(50, 50, 50, 1);-moz-box-shadow:3px 3px 0px 0px rgba(50, 50, 50, 1);
+	      box-shadow:3px 3px 0px 0px rgba(50, 50, 50, 1);}
+
+	    .small {padding:.4em .25em;margin-right:2px;}
+	    .punct {padding:.4em .15em;}
+
+	    .up {transform:rotate(-5deg);
+	    -moz-transform:rotate(-5deg);
+	    -ms-transform:rotate(-5deg);
+	    -webkit-transform:rotate(-5deg);}
+
+	    .upabit {transform:rotate(-3deg);
+	    -moz-transform:rotate(-3deg);
+	    -ms-transform:rotate(-3deg);
+	    -webkit-transform:rotate(-3deg);}
+
+	    .down {transform:rotate(6deg);
+	    -moz-transform:rotate(6deg);
+	    -ms-transform:rotate(6deg);
+	    -webkit-transform:rotate(6deg);}
+
+	    .downabit {transform:rotate(3deg);
+	    -moz-transform:rotate(3deg);
+	    -ms-transform:rotate(3deg);
+	    -webkit-transform:rotate(3deg);}
+
+	    .small.down, .small.up, .small.upabit, .small.downabit {margin-right:4px;}
+	    .higher {position:relative;top:-4px;}
+	    .lower {position:relative;top:3px;}
+	    .leftabit {position:relative;left:-4px;}
+	    .rightabit {position:relative;left:3px;}
+
+	    #source {
+	    color: blue;
+	    border: 1px solid black;
+	    position: absolute;
+	    top: 550px;
+	    left: 300px;
+	  }
+	  	#target {
+	    border: 1px solid black;
+	    position: absolute;
+	    top: 600px;
+	    left: 300px;
+	  }
+	</style>
+</head>
+<body>
+	<div class="gradi">
+		<img src="gradi.png">
+		<img src="gradi.png" style="position: relative; top: -5.5px;">
+		<img src="curve.png" style="width: 100%; height: 200%; position: absolute; top: 0px; left: 0px;">	
+	</div>
+
+	<div>
+	   <p id="source" ondragstart="dragstart_handler(event);" draggable="true">
+	     Select this element, drag it to the Drop Zone and then release the selection to move the element.</p>
+	 </div>
+	 <div id="target" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">Drop Zone</div>
+
+		<div id="xxx">
+		    <span style="background-color: ; border: 1px solid black;">차케(착해)</span>
+		    <span style="background-color: ; border: 1px solid black;">추카추카(축하축하)</span>
+		    <span style="background-color: ; border: 1px solid black;">에구(아이고)</span>
+		    <span style="background-color: ; border: 1px solid black;">난림다(난리입니다)</span>
+		    <span style="background-color: ; border: 1px solid black;">걍(그냥)</span>
+		    <span style="background-color: ; border: 1px solid black;">셤(시험)</span>
+		    <span style="background-color: ; border: 1px solid black;">어솨요(어서오세요)</span>
+		    <span style="background-color: ; border: 1px solid black;">리하이(리하)</span>
+		    <span style="background-color: ; border: 1px solid black;">9</span>
+		    <span style="background-color: ; border: 1px solid black;">10</span>
+		    <span style="background-color: ; border: 1px solid black;">11</span>
+		    <span style="background-color: ; border: 1px solid black;">12</span>
+		    <span style="background-color: ; border: 1px solid black;">13</span>
+		    <span style="background-color: ; border: 1px solid black;">14</span>
+		    <span style="background-color: ; border: 1px solid black;">15</span>
+		    <span style="background-color: ; border: 1px solid black;">16</span>
+		    <span style="background-color: ; border: 1px solid black;">17</span>
+		    <span style="background-color: ; border: 1px solid black;">18</span>
+		    <span style="background-color: ; border: 1px solid black;">19</span>
+		    <span style="background-color: ; border: 1px solid black;">20</span>
+		</div>
+
+	<div id="container">
+	    <p>
+	      <span>is</span> 
+	      <span class="higher">this</span> 
+	      <span>the</span> 
+	      <span class="up">real</span> 
+	      <span class="small">life</span>
+	      <span class="punct">?</span><br/>
+	      <span class="leftabit">is</span> 
+	      <span>this</span> 
+	      <span>just</span> 
+	      <span class="small downabit">fantasy</span>
+	      <span class="punct">?</span><br/>
+	      <span class="rightabit">caught</span> 
+	      <span class="higher">in</span> 
+	      <span class="down">a</span> 
+	      <span class="small">land</span>
+	      <span>slide</span><br/>
+	      <span>no</span> 
+	      <span>escape</span> 
+	      <span class="up">from</span> 
+	      <span class="downabit higher">reality</span><br/>
+	      <span class="lower leftabit">open</span> 
+	      <span>your</span> 
+	      <span class="small">eye</span>
+	      <span class="punct upabit">s</span><br/>
+	      <span class="rightabit">look</span> 
+	      <span>up</span> 
+	      <span>to</span> 
+	      <span class="lower">the</span> 
+	      <span>skies</span> 
+	      <span>and</span> 
+	      <span class="higher">see</span><br/>
+	      <span>I&rsquo;m</span> 
+	      <span class="up">just</span> 
+	      <span>a</span> 
+	      <span>poor</span> 
+	      <span class="small higher">boy</span>
+	      <span class="punct">,</span> 
+	      <span>I</span> 
+	      <span class="downabit">need</span> 
+	      <span>no</span> 
+	      <span>sympathy</span><br/>
+	      <span class="up">because</span> 
+	      <span>I&rsquo;m</span> 
+	      <span>easy</span> 
+	      <span class="small">come</span>
+	      <span class="punct downabit">,</span> 
+	      <span>easy</span> 
+	      <span class="down">go</span><br/>
+	      <span>a</span> 
+	      <span class="downabit">little</span> 
+	      <span class="small">high</span>
+	      <span class="punct">,</span> 
+	      <span>little</span> 
+	      <span class="higher">low</span><br/>
+	      <span class="upabit leftabit">anyway</span> 
+	      <span>the</span> 
+	      <span class="lower">wind</span> 
+	      <span class="small upabit">blows</span>
+	      <span class="punct">,</span> 
+	      <span class="small">doesn</span>
+	      <span class="small punct downabit">&rsquo;</span>
+	      <span class="punct lower">t</span> 
+	      <span>really</span> 
+	      <span>matter</span> 
+	      <span>to</span> 
+	      <span class="small up">me</span>
+	      <span class="punct">,</span><br/>
+	      <span class="down">to</span> 
+	      <span class="small">me</span>
+	      <span class="punct">.</span>
+	    </p>
+
+	    <p>
+	      <span class="small">~</span>
+	      <span class="small down">~</span> 
+	      <span class="up">Queen</span>
+	    </p>
+
+	  </div>
+
+</body>
+
+<script>
+    const sortable = new Draggable.Sortable(
+        document.querySelector('#xxx'), {
+            draggable: 'span',
+        }
+    )
+    sortable.on('sortable:start', () => {
+        console.log('sortable:start')
+    })
+    sortable.on('sortable:sort', () => {
+        console.log('sortable:sort')
+    })
+    sortable.on('sortable:sorted', () => {
+        console.log('sortable:sorted')
+    })
+    sortable.on('sortable:stop', () => {
+        console.log('sortable:stop')
+    })
+
+
+    const sortable2 = new Draggable.Sortable2(
+        document.querySelector('#container'), {
+            draggable: 'span',
+        }
+    )
+    sortable2.on('sortable:start', () => {
+        console.log('sortable:start')
+    })
+    sortable2.on('sortable:sort', () => {
+        console.log('sortable:sort')
+    })
+    sortable2.on('sortable:sorted', () => {
+        console.log('sortable:sorted')
+    })
+    sortable2.on('sortable:stop', () => {
+        console.log('sortable:stop')
+    })
+
+
+    function dragstart_handler(ev) {
+	 console.log("dragStart");
+	 // Change the source element's background color to signify drag has started
+	 ev.currentTarget.style.border = "dashed";
+	 // Set the drag's format and data. Use the event target's id for the data 
+	 ev.dataTransfer.setData("text/plain", ev.target.id);
+	}
+
+	function dragover_handler(ev) {
+	 console.log("dragOver");
+	 ev.preventDefault();
+	}
+
+	function drop_handler(ev) {
+	 console.log("Drop");
+	 ev.preventDefault();
+	 // Get the data, which is the id of the drop target
+	 var data = ev.dataTransfer.getData("text");
+	 ev.target.appendChild(document.getElementById(data));
+	 // Clear the drag data cache (for all formats/types)
+	 ev.dataTransfer.clearData();
+	}
+</script>
+
+</html>

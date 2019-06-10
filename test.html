@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+	<link rel="stylesheet" type="text/css" href="http://typojanchi.org/2013/wp-content/themes/typojanchi_child/style.css" />
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+	<style type="text/css">
+
+		a:link, a:active, a:visited{text-decoration: none; }
+	    a:link, a:active, a:visited{color: black;}
+
+		h1{border: 1px solid black; border-radius: 50%; background-color:yellow; overflow: hidden; box-shadow: 10px 10px 15px #a09f9f;}
+		h1:hover{background-color: white; color: black;}
+
+		.what:hover{background-color: white; color: black;}
+		.what{background-color: white; color: black;}
+		.line{width: 70px; height: 1px; background-color: black; transform: rotate(90deg);}
+
+		.navi{width: 450px; height: 500px; position: fixed; bottom: 50px; right: 0px;}
+
+		#navi1{width: 360px; height: 80px; position: relative; top: 0px; left: 40px; border-radius: 50%; background-color: white; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; font-size: 2.4em; color: #00cdff; line-height: 2em; visibility: hidden; cursor: pointer;}
+		#navi2{width: 400px; height: 80px; position: relative; top: 20px; border-radius: 50%; background-color: white; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; font-size: 2.4em; color: #00cdff; line-height: 2em; visibility: hidden; cursor: pointer;}
+		#navi3{width: 430px; height: 80px; position: relative; top: 40px; border-radius: 50%; background-color: white; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; font-size: 2.4em; color: #00cdff; line-height: 2em; visibility: hidden; cursor: pointer;}
+		#navi4{width: 400px; height: 120px; position: relative; top: 60px; border-radius: 50%; background-color: white; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; font-size: 2.4em; color: #00cdff; line-height: 1.3em; overflow: hidden; visibility: hidden; cursor: pointer;}
+
+		#navi1:hover{border: 1px solid black;}
+		#navi2:hover{border: 1px solid black;}
+		#navi3:hover{border: 1px solid black;}
+		#navi4:hover{border: 1px solid black;}
+
+		#cola{visibility: hidden; animation-name: window;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;}
+
+        #cola2{visibility: hidden; animation-name: window;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;}
+
+		div#mainindex{overflow: visible !important;}
+
+		@keyframes window {
+        0%{opacity: 0}
+        
+        100%{opacity: 1}
+        }
+
+     	@keyframes blinks {
+        from {background-color: yellow; box-shadow: 0 0 0px white;}
+        to {background-color: black; box-shadow: 0px 0px 500px red;}
+      	}
+
+      	@keyframes blink {
+        from {transform: scale(1,1);}
+        to {transform: scale(7,7);}
+      	}
+
+      	@keyframes plzdwn {
+		  0%   {top: -70px;}
+		  30%   {top: -10px;}
+		  80%   {top: -10px;}
+		  100%   {top: -70px;}
+		}
+
+		@keyframes plzdwn {
+		  0%   {top: -70px;}
+		  30%   {top: -10px;}
+		  80%   {top: -10px;}
+		  100%   {top: -70px;}
+		}
+
+		#bigBox {
+		  position:absolute;
+		  width:100%;
+		  height:100%;
+		  top: 0px;
+		  margin:-100px 0 0 -120px;
+		  animation:bigBoxAnimation 6s linear infinite;
+		  visibility: hidden;
+		  z-index: -999;
+		}
+		#box,#box2,#box3 {
+		  position:absolute;
+		  
+		  width:100%;
+		  height:100%;
+		  margin:-20px 0 0 -20px;
+		  animation:boxAnimation 50s cubic-bezier(0.02, 0.01, 0.31, 1) infinite;
+		}
+		#box2 {
+		  animation:boxAnimation 5s cubic-bezier(0.02, 0.01, 0.31, 1) infinite;
+		  transform:matrix(-1,0,0,1,0,0);
+		}
+		#box3 {
+		  animation:boxAnimation 50s cubic-bezier(0.09, 0.01, 0.31, 2) infinite;
+		  transform:matrix(-10,0,0,1,0,0);
+		}
+		#box::after, #box2::after, #box3::after {
+		  content:'';
+		  position:absolute;
+		  top:0;
+		  left:0;
+		  width:6px;
+		  height:6px;
+		  background:#fff;
+		  border-radius:100%;
+		  animation:spanAnimation 3s cubic-bezier(0.3, 0.27, 0.07, 1.64) infinite;
+		  box-shadow:rgba(28,148,175,1) 0 0 5px 200px;
+		  border: 1px solid black;
+		}
+		@keyframes bigBoxAnimation {
+		  100% {transform:rotate(360deg);}
+		}
+		@keyframes boxAnimation{
+		  50% {transform:translateY(-150px);}
+		}
+		@keyframes spanAnimation {
+		  50% {transform:translateX(-150px)}
+		}
+	</style>
+	
+    
+    <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+	
+	<script src="http://typojanchi.org/2013/wp-content/themes/typojanchi/script/jquery.isotope.js" type="text/javascript"></script> 
+
+	<script type="text/javascript">
+		$(window).load(function(){
+	    var $container = $('#mainindex');
+	    $container.isotope({
+	        filter: '*',
+	        animationOptions: {
+	            duration: 750,
+	            easing: 'linear',
+	            queue: false
+	        }
+			
+	    });
+		
+		
+	 
+	    $('.Filter a').click(function(){
+			$('#mainindex').isotope('shuffle');
+	        $('.Filter').removeClass('category-catname');
+	        $(this).addClass('currentkey');
+	 
+	        var selector = $(this).attr('data-filter');
+	        $container.isotope({
+	            filter: selector,
+	            animationOptions: {
+	                duration: 750,
+	                easing: 'linear',
+	                queue: false
+	            }
+	         });
+	         return false;
+	    }); 
+	});
+
+	</script>    
+
+
+	<script type="text/javascript">
+
+	$(window).load(function(){
+	    var $container = $('#mainindex_en');
+	    $container.isotope({
+	        filter: '*',
+	        animationOptions: {
+	            duration: 750,
+	            easing: 'linear',
+	            queue: false
+	        }
+			
+	    });
+		
+		$('#mainindex_en').isotope({
+	  		masonry: {
+	    	columnWidth: 10,
+			gutterWidth: 20
+	  		}
+		});
+		
+	 
+	    $('.Filter a').click(function(){
+			$('#mainindex_en').isotope('shuffle');
+	        $('.Filter').removeClass('category-catname_en');
+	        $(this).addClass('currentkey_en');
+	 
+	        var selector = $(this).attr('data-filter');
+	        $container.isotope({
+	            filter: selector,
+	            animationOptions: {
+	                duration: 750,
+	                easing: 'linear',
+	                queue: false
+	            }
+	         });
+	         return false;
+	    }); 
+	});
+
+	</script>    
+
+
+
+	<script>
+	(function ($) {
+	  $.Isotope.prototype._getCenteredMasonryColumns = function() {
+	    this.width = this.element.width();
+	    
+	    var parentWidth = this.element.parent().width();
+	    
+	                  // i.e. options.masonry && options.masonry.columnWidth
+	    var colW = this.options.masonry && this.options.masonry.columnWidth ||
+	                  // or use the size of the first item
+	                  this.$filteredAtoms.outerWidth(true) ||
+	                  // if there's no items, use size of container
+	                  parentWidth;
+	    
+	    var cols = Math.floor( parentWidth / colW );
+	    cols = Math.max( cols, 1 );
+
+	    // i.e. this.masonry.cols = ....
+	    this.masonry.cols = cols;
+	    // i.e. this.masonry.columnWidth = ...
+	    this.masonry.columnWidth = colW;
+	  };
+	  
+	  $.Isotope.prototype._masonryReset = function() {
+	    // layout-specific props
+	    this.masonry = {};
+	    // FIXME shouldn't have to call this again
+	    this._getCenteredMasonryColumns();
+	    var i = this.masonry.cols;
+	    this.masonry.colYs = [];
+	    while (i--) {
+	      this.masonry.colYs.push( 0 );
+	    }
+	  };
+
+	  $.Isotope.prototype._masonryResizeChanged = function() {
+	    var prevColCount = this.masonry.cols;
+	    // get updated colCount
+	    this._getCenteredMasonryColumns();
+	    return ( this.masonry.cols !== prevColCount );
+	  };
+	  
+	  $.Isotope.prototype._masonryGetContainerSize = function() {
+	    var unusedCols = 0,
+	        i = this.masonry.cols;
+	    // count unused columns
+	    while ( --i ) {
+	      if ( this.masonry.colYs[i] !== 0 ) {
+	        break;
+	      }
+	      unusedCols++;
+	    }
+	    
+	    return {
+	          height : Math.max.apply( Math, this.masonry.colYs ),
+	          // fit container to columns that have been used;
+	          width : (this.masonry.cols - unusedCols) * this.masonry.columnWidth
+	        };
+	  };
+	  
+	})(jQuery);  
+	</script>
+
+
+	<script type="text/javascript">
+	<!--
+	    function toggle_visibility(id) {
+	       var e = document.getElementById(id);
+	       if(e.style.display == 'block')
+	          e.style.display = 'none';
+	       else
+	          e.style.display = 'block';
+	    }
+	//-->
+	</script>
+
+	<script type="text/javascript">
+
+		function showAll(){
+			var element = document.getElementById('navi1');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+		}
+
+		function nshowAll(){
+			var element = document.getElementById('navi1');
+
+			if(element.style.visibility == 'visible') {
+				element.style.visibility = 'hidden';
+			}
+		}
+
+
+		function showAll2(){
+			var element = document.getElementById('navi2');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+		}
+
+		function nshowAll2(){
+			var element = document.getElementById('navi2');
+
+			if(element.style.visibility == 'visible') {
+				element.style.visibility = 'hidden';
+			}
+		}
+
+		function showAll3(){
+			var element = document.getElementById('navi3');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+		}
+
+		function nshowAll3(){
+			var element = document.getElementById('navi3');
+
+			if(element.style.visibility == 'visible') {
+				element.style.visibility = 'hidden';
+			}
+		}
+
+		function showAll4(){
+			var element = document.getElementById('navi4');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+		}
+
+		function nshowAll4(){
+			var element = document.getElementById('navi4');
+
+			if(element.style.visibility == 'visible') {
+				element.style.visibility = 'hidden';
+			}
+		}
+
+		mainindexwrapper.onmouseover = function(){
+        
+        	document.getElementById("thisone").style.top = 10;
+      
+      	}
+
+      	function showCola(){
+      		var element = document.getElementById('cola');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+      	}
+
+      	function noshowCola(){
+      		var element = document.getElementById('cola');
+
+			if(element.style.visibility == 'visible') {
+				element.style.visibility = 'hidden';
+			}
+      	}
+
+      	function showCola2(){
+      		var element = document.getElementById('cola2');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+      	}
+
+      	function noshowCola2(){
+      		var element = document.getElementById('cola2');
+
+			if(element.style.visibility == 'visible') {
+				element.style.visibility = 'hidden';
+			}
+      	}
+
+      	function showbigBox(){
+      		var element = document.getElementById('bigBox');
+
+			if(element.style.visibility == 'hidden') {
+				element.style.visibility = 'visible';
+			}else{
+				element.style.visibility = 'visible'
+			}
+      	}
+
+      	function noshowbigBox(){
+      		var element = document.getElementById('bigBox');
+
+			if(element.style.visibility == 'visible') {
+				element.style.visibility = 'hidden';
+			}
+      	}
+	</script>
+
+	
+</head>
+	<body style="overflow:hidden;">  
+
+	<div data-role="page" id="pageone">
+	  <div data-role="panel" id="overlayPanel" data-display="overlay" style="background-color:transparent; line-height: 1.5em;"> 
+	    <h2><편하게 이름짓기></h2>
+	    <p>마음에 드는 이미지를 클릭하여<br>이름을 필터링 하는 것 만으로 완성.</p>
+	    <p>마음에 드는 이미지를 클릭하여<br>이름을 필터링 하는 것 만으로 완성.</p>
+	    <p>마음에 드는 이미지를 클릭하여<br>이름을 필터링 하는 것 만으로 완성.</p>
+	    <img src="mgh.png" style="border-radius: 50%; width: 200px;"><br>
+	    <img src="wave.jpeg" style="border-radius: 50%; width: 200px;"><br>
+	    <img src="tree.jpg" style="border-radius: 50%; width: 200px;"><br>
+	    <img src="bird.jpg" style="border-radius: 50%; width: 200px;"><br><br>
+	    <a href="#pageone" data-rel="close" class="ui-btn ui-btn-inline ui-corner-all ui-btn-a" style="font-size: 0.5em;">알겠고, 닫기</a>
+	  </div>
+	</div>
+
+
+		
+		<div id="container" >
+		<div id="content" >
+             
+                <div class="logobox_fixed Filter" style="width: 100%; height: 100%; margin: 0px; overflow: hidden;">
+                <a href="#contents" class="smoothScroll" data-filter="*" style="color: black;"><img src="gradi.png" style="width: 100%; height: 100%; z-index: 999;"></a>
+
+	                 
+
+
+                </div>
+
+            
+            <div id="mainindexwrapper" >
+            	<div data-role="main" class="ui-content" style="z-index: 999; position: absolute; top: 0px; left: 0px; width: 101.8%;  height: 80px; overflow: visible;">
+            		 <div id="thisone" style="">
+            		 	<img src="bar2.png" style="width: 100%; position: absolute; top: -70px; left: -40px;animation-name: plzdwn; animation-duration: 3s; animation-timing-function: linear; animation-iteration-count: infinite;">
+            		 </div>
+            		
+            		<div id="hhove">
+            			<img src="bar3.png" style="width: 100%; position: absolute; top:-20px; left: -30px;">
+            		</div>
+            		
+            		<div id="cola">
+            			<img src="zzz.png" style="position:relative; bottom: -420px; width: 104%; right: 30px;">
+            		</div>
+
+            		<div id="cola2">
+            			<img src="bird.png" style="position:relative; bottom: 800px; width: 40%; right: 30px;">
+            		</div>
+
+            		<div id="bigBox">
+				  		<div id="box"></div>
+				  		<div id="box2" style="color: white">
+				  			왜이렇게 크지?<img src="bird.png" >
+				  		</div>
+				  		<div id="box3" style="color: white">
+				  			감기싫다<img src="bird.jpg" style="width: 50px;">
+				  		</div>
+		  			</div>
+            		
+				</div>
+			</img>
+
+            			
+            <div id="mainindex" style="z-index: 999; transform: scale(0.7);
+		   transform-origin: 50% 50%; border: 0px solid black;">           
+            	
+                                <div class="box hentry p1 post publish author-admin category-keyword_kr category-kr category-section3 category-type3 untagged y2013 m07 d28 h12">
+                <h1 style="text-align: center; animation-name: blink; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: steps(10);">
+                	<div class="Filter"><a href="#contents" class="smoothScroll" data-filter=".persistive, .category-section3" style="color: black;">
+                		.
+                		<img src="mgh.png" style="width: 100px; position: absolute; right: -10px; top: -5px;"></img>
+                	</a>
+                </div>
+            </h1>
+                </div>
+                                <div class="box hentry p2 post publish author-admin category-keyword_kr category-kr category-section1 category-type2 untagged y2013 m07 d28 h12 alt" >
+                <h1>가람휘</h1>
+                </div>
+                                <div class="box hentry p3 post publish author-admin category-keyword_kr category-kr category-section1 category-type6 untagged y2013 m07 d28 h12" >
+                <h1>가온길</h1>
+                </div>
+                                <div class="box hentry p4 post publish author-admin category-keyword_kr category-kr category-section2 category-type4 untagged y2013 m07 d28 h12 alt" >
+                <h1>가온늘</h1>
+                </div>
+                                <div class="box hentry p5 post publish author-admin category-keyword_kr category-kr category-section1 category-type4 untagged y2013 m07 d28 h12" >
+                <h1>가온별</h1>
+                </div>
+                                <div class="box hentry p6 post publish author-admin category-keyword_kr category-kr category-section1 category-type5 untagged y2013 m07 d28 h12 alt" >
+                <h1>고요가람</h1>
+                </div>
+                                <div class="box hentry p7 post publish author-admin category-keyword_kr category-kr category-section3 category-type1 untagged y2013 m07 d28 h12" >
+                <h1>곳답이</h1>
+                </div>
+                                <div class="box hentry p8 post publish author-admin category-keyword_kr category-kr category-section1 category-type2 untagged y2013 m07 d28 h11 alt" >
+                <h1>글누리한</h1>
+                </div>
+                                <div class="box hentry p9 post publish author-admin category-keyword_kr category-kr category-type1 untagged y2013 m09 d23 h01" >
+                <h1>기쁜샘가온</h1>
+                </div>
+                                <div class="box hentry p10 post publish author-admin category-keyword_kr category-kr category-section1 category-type3 untagged y2013 m07 d28 h12 alt" >
+                <h1>누리봄</h1>
+                </div>
+                                <div class="box hentry p11 post publish author-admin category-keyword_kr category-kr category-section3 category-type4 untagged y2013 m07 d28 h12" >
+                <h1>누리솔</h1>
+                </div>
+                                <div class="box hentry p12 post publish author-admin category-keyword_kr category-kr category-section1 category-type5 untagged y2013 m07 d28 h11 alt" >
+                <h1>누리한</h1>
+                </div>
+                                <div class="box hentry p13 post publish author-admin category-keyword_kr category-kr category-section1 category-type2 untagged y2013 m07 d28 h12" >
+                <h1 style="text-align: center; 
+                animation-name: blink;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: steps(10);"><div class="Filter"><a href="#contents" class="smoothScroll" data-filter=".persistive, .category-section2">바다<img src="wave.jpeg" style="width: 100px; position: absolute; right: -30px; top: -10px; z-index: -999;"></img></a></div></h1>
+                </div>
+                                <div class="box hentry p14 post publish author-admin category-keyword_kr category-kr category-section1 category-type6 untagged y2013 m07 d28 h12 alt" >
+                <h1>다봉누리</h1>
+                </div>
+                                <div class="box hentry p15 post publish author-admin category-keyword_kr category-kr category-section1 category-type1 untagged y2013 m07 d27 h01" >
+                <h1>다푸르뫼</h1>
+                </div>
+                                <div class="box hentry p16 post publish author-admin category-keyword_kr category-kr category-section1 category-type3 untagged y2013 m07 d28 h12 alt" >
+                <h1>두뫼아름</h1>
+                </div>
+                                <div class="box hentry p17 post publish author-admin category-catname category-kr category-section2 untagged y2013 m07 d28 h15" >
+                <h1>늘힘나가온</h1>
+                </div>
+                                <div class="box hentry p18 post publish author-admin category-keyword_kr category-kr category-section2 category-type2 untagged y2013 m07 d28 h12 alt" >
+                <h1>달빛누리</h1>
+                </div>
+                                <div class="box hentry p19 post publish author-admin category-keyword_kr category-kr category-section2 category-type4 untagged y2013 m07 d28 h12" >
+                <h1>뜰가온</h1>
+                </div>
+                				<div class="box hentry p64 post publish author-admin category-keyword_kr category-kr category-section2 category-type4 untagged y2013 m07 d28 h12" >
+                <h1>테스트테스</h1>
+                </div>
+                                <div class="box hentry p20 post publish author-admin category-keyword_kr category-kr category-section2 category-type4 untagged y2013 m07 d28 h12 alt" >
+                <h1>마음솔가온</h1>
+                </div>
+                                <div class="box hentry p21 post publish author-admin category-keyword_kr category-kr category-section1 category-type1 untagged y2013 m07 d28 h12" >
+                <h1>맑가람</h1>
+                </div>
+                                <div class="box hentry p22 post publish author-admin category-keyword_kr category-kr category-section4 category-type4 untagged y2013 m07 d28 h12 alt" >
+                <h1 style="text-align: center; 
+                animation-name: blink;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: steps(10);"><div class="Filter"><a href="#contents" class="smoothScroll" data-filter=".persistive, .category-section2" onmouseover="showCola()" onmouseout="noshowCola()">미르내<img src="tree.jpg" style="width: 90px; position: absolute; right: -20px; top: -20px; z-index: -999;"></img></a></div></h1>
+                </div>
+                                <div class="box hentry p23 post publish author-admin category-keyword_kr category-kr category-section1 category-type6 untagged y2013 m07 d28 h12" >
+                <h1>미르별</h1>
+                </div>
+                                <div class="box hentry p24 post publish author-admin category-keyword_kr category-kr category-section1 category-type4 untagged y2013 m08 d19 h04 alt" >
+                <h1>별누리</h1>
+                </div>
+                                <div class="box hentry p25 post publish author-admin category-keyword_kr category-kr category-section1 category-type6 untagged y2013 m07 d28 h11" >
+                <h1>바다가온</h1>
+                </div>
+                                <div class="box hentry p26 post publish author-admin category-keyword_kr category-kr category-section1 category-type4 untagged y2013 m07 d28 h12 alt" >
+                <h1>바른누리</h1>
+                </div>
+                                <div class="box hentry p27 post publish author-admin category-keyword_kr category-kr category-section1 category-type5 untagged y2013 m07 d28 h12" >
+                <h1>별메</h1>
+                </div>
+                                <div class="box hentry p28 post publish author-admin category-keyword_kr category-kr category-section1 category-type1 untagged y2013 m07 d28 h12 alt" >
+                <h1>별찬가람</h1>
+                </div>
+                                <div class="box hentry p29 post publish author-admin category-keyword_kr category-kr category-section1 category-type4 untagged y2013 m07 d28 h12" >
+                <h1>별찬길누리</h1>
+                </div>
+                                <div class="box hentry p30 post publish author-admin category-keyword_kr category-kr category-section2 category-type3 untagged y2013 m07 d28 h12 alt" >
+                <h1>봄가람</h1>
+                </div>
+                                <div class="box hentry p31 post publish author-admin category-keyword_kr category-kr category-section1 category-type2 untagged y2013 m07 d28 h12" >
+                <h1>밝은누리에</h1>
+                </div>
+                                <div class="box hentry p32 post publish author-admin category-keyword_kr category-kr category-section4 category-type1 untagged y2013 m07 d28 h12 alt" >
+                <h1>봄가은</h1>
+                </div>
+                                <div class="box hentry p33 post publish author-admin category-keyword_kr category-kr category-section4 category-type3 untagged y2013 m07 d28 h12" >
+                <h1 style="text-align: center; animation-name: blink;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: steps(10)"><div class="Filter"><a href="#contents" class="smoothScroll" data-filter=".persistive, .category-section1" onmouseover="showbigBox(),showCola2()" onmouseout="noshowbigBox(), noshowCola2()">새가람고요<img src="bird.jpg" style="width: 90px; position: absolute; right: -10px; top: -20px; z-index: -999;"></img></a></div></h1>
+                </div>
+                                <div class="box hentry p34 post publish author-admin category-keyword_kr category-kr category-section1 category-type1 untagged y2013 m07 d28 h12 alt" >
+                <h1 style="width: 100px;">새누리기쁜이</h1>
+                </div>
+                                <div class="box hentry p35 post publish author-admin category-keyword_kr category-kr category-section1 category-type4 untagged y2013 m07 d28 h12" >
+                <h1>새론가람</h1>
+                </div>
+                                <div class="box hentry p36 post publish author-admin category-keyword_kr category-kr category-section1 category-type2 untagged y2013 m07 d28 h12 alt" >
+                <h1>새별가온</h1>
+                </div>
+                                <div class="box hentry p37 post publish author-admin category-keyword_kr category-kr category-section2 category-type6 untagged y2013 m07 d28 h12" >
+                <h1>소소뜨라</h1>
+                </div>
+                                <div class="box hentry p38 post publish author-admin category-keyword_kr category-kr category-section1 category-type5 untagged y2013 m07 d28 h12 alt" >
+                <h1>솔고요해</h1>
+                </div>
+                                <div class="box hentry p39 post publish author-admin category-keyword_kr category-kr category-section4 category-type2 untagged y2013 m07 d28 h12" >
+                <h1>슬마로</h1>
+                </div>
+                                <div class="box hentry p40 post publish author-admin category-keyword_kr category-kr category-section3 category-type5 untagged y2013 m07 d28 h12 alt" >
+                <h1>실가람</a></h1>
+                </div>
+                                <div class="box hentry p41 post publish author-admin category-keyword_kr category-kr category-section1 category-type2 untagged y2013 m07 d28 h12" >
+                <h1>아롱누리</h1>
+                </div>
+                                <div class="box hentry p42 post publish author-admin category-keyword_kr category-kr category-section2 category-type5 untagged y2013 m07 d28 h12 alt" >
+                <h1>아름가라뫼</h1>
+                </div>
+                                <div class="box hentry p43 post publish author-admin category-keyword_kr category-kr category-section1 category-type3 untagged y2013 m07 d28 h12" >
+                <h1>아름메</h1>
+                </div>
+                                <div class="box hentry p44 post publish author-admin category-keyword_kr category-kr category-section1 category-type4 untagged y2013 m07 d28 h12 alt" >
+                <h1>아리누리</h1>
+                </div>
+                                <div class="box hentry p45 post publish author-admin category-keyword_kr category-kr category-section2 category-type6 untagged y2013 m07 d28 h12" >
+                <h1>알찬길누리</h1>
+                </div>
+                                <div class="box hentry p46 post publish author-admin category-keyword_kr category-kr category-section4 category-type5 untagged y2013 m07 d28 h12 alt" >
+                <h1>은빛누리에</h1>
+                </div>
+                                <div class="box hentry p47 post publish author-admin category-keyword_kr category-kr category-section4 category-type1 untagged y2013 m07 d28 h12" >
+                <h1>이든별</h1>
+                </div>
+                                <div class="box hentry p48 post publish author-admin category-keyword_kr category-kr category-section3 category-type2 untagged y2013 m07 d28 h12 alt" >
+                <h1>이든샘</h1>
+                </div>
+                                <div class="box hentry p49 post publish author-admin category-keyword_kr category-kr category-section4 category-type6 untagged y2013 m07 d28 h12" >
+                <h1>이든해솔</h1>
+                </div>
+                                <div class="box hentry p50 post publish author-admin category-keyword_kr category-kr category-section1 category-type4 untagged y2013 m07 d28 h12 alt" >
+                <h1>찬누리</h1>
+                </div>
+                                <div class="box hentry p51 post publish author-admin category-catname category-kr category-section4 untagged y2013 m07 d28 h15" >
+                <h1>하늘누리밝</h1>
+                </div>
+                                <div class="box hentry p52 post publish author-admin category-keyword_kr category-kr category-section1 category-type3 untagged y2013 m07 d28 h12 alt" >
+                <h1>하얀누리</h1>
+                </div>
+                                <div class="box hentry p53 post publish author-admin category-keyword_kr category-kr category-section3 category-type1 untagged y2013 m07 d28 h12" >
+                <h1>한아람</h1>
+                </div>
+                                <div class="box hentry p54 post publish author-admin category-keyword_kr category-kr category-section1 category-type3 untagged y2013 m07 d28 h12 alt" >
+                <h1>한얼누리</h1>
+                </div>
+                                <div class="box hentry p55 post publish author-admin category-keyword_kr category-kr category-section1 category-type1 untagged y2013 m07 d28 h12" >
+                <h1>해가람늘</h1>
+                </div>
+                                <div class="box hentry p56 post publish author-admin category-keyword_kr category-kr category-section1 category-type1 untagged y2013 m07 d28 h12 alt" >
+                <h1>해나가람</h1>
+                </div>
+                                <div class="box hentry p57 post publish author-admin category-catname category-kr category-section3 untagged y2013 m07 d28 h15" >
+                <h1>해찬길누리</h1>
+                </div>
+                                <div class="box hentry p58 post publish author-admin category-keyword_kr category-kr category-section1 category-type2 untagged y2013 m07 d28 h12 alt" >
+                <h1>흰누리</h1>
+                </div>
+                                <div class="box hentry p59 post publish author-admin category-keyword_kr category-kr category-section1 category-type6 untagged y2013 m07 d28 h12" >
+                <h1>흰가람</h1>
+                </div>
+                                <div class="box hentry p60 post publish author-admin category-keyword_kr category-kr category-section1 category-type6 untagged y2013 m07 d28 h12 alt" >
+                <h1>해뫼</h1>
+                </div>
+                                <div class="box hentry p61 post publish author-admin category-keyword_kr category-kr category-section1 category-type3 untagged y2013 m07 d28 h11" >
+                <h1>한메</h1>
+                </div>
+                                <div class="box hentry p62 post publish author-admin category-keyword_kr category-kr category-section1 category-type5 untagged y2013 m07 d28 h12 alt" >
+                <h1>해든누리</h1>
+                </div>
+                                <div class="box hentry p63 post publish author-admin category-catname_wide category-kr category-section1 untagged y2013 m07 d28 h15" >
+                <h1 style="text-align: center; animation-name: blink;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: steps(10);"><div class="Filter"><a href="#contents" class="smoothScroll" data-filter=".persistive, .category-section1" >✵고운니름<br>자랑합시다✵<img src="mgh.png" style="width: 250px; position: absolute; right: 0px; top: -10px; z-index: -999;"></img></a></div></h1>
+                
+                </div>  
+
+                 
+            
+            </div>
+            </div>
+
+
+		</div><!-- #content -->
+		</div>
+
+
+	</body>
+</html>
